@@ -14,7 +14,7 @@ echo "add the GPG key for the official Docker repository to your system"
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 
 echo "Add the Docker repository to APT sources"
-sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/debian bionic stable"
+sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/debian buster stable"
 
 echo "Redo apt update"
 sudo apt update
