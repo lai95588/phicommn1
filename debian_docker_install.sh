@@ -12,8 +12,12 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 echo "add the GPG key for the official Docker repository to your system"
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 
+
 echo "Add the Docker repository to APT sources"
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian bionic stable"
+sudo add-apt-repository \
+   "deb [arch=arm64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
 
 echo "Redo apt update"
 sudo apt update
