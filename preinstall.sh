@@ -8,10 +8,10 @@ echo "Running apt-get preparation"
 sudo apt update;
 sudo apt upgrade -y;
 sudo apt install wget screen git curl -y;
-sudo wget https://github.com/home-assistant/hassbian-scripts/releases/download/v0.6/hassbian-scripts_0.6.deb;
+sudo wget https://github.com/home-assistant/hassbian-scripts/releases/download/v0.13/hassbian-scripts_0.13.0_all.deb;
 sleep 5
 sudo apt install bluetooth avahi-daemon python3-venv libtiff5-dev libtiff5 libjbig-dev python3-pip python3-dev libbluetooth-dev build-essential libssl-dev libffi-dev  python-dev libudev-dev -y;
-sudo dpkg -i  hassbian-scripts_0.6.deb;
+sudo dpkg -i  hassbian-scripts_0.13.0_all.deb;
 sleep 5
 sudo hassbian-config show;
 sleep 3
@@ -42,10 +42,11 @@ python3 -m venv /srv/homeassistant
 echo "Changing to Home Assistant venv"
 source /srv/homeassistant/bin/activate
 echo "Installing latest version of Home Assistant"
-pip3 install pip==20.2.2 netdisco setuptools wheel
+pip3 install pip==21.3.1 netdisco setuptools wheel
 pip3 install websockets
-pip3 install broadlink PyXiaomiGateway
-pip3 install hlk-sw16==0.0.8
+#pip3 install broadlink PyXiaomiGateway
+pip3 install broadlink
+pip3 install hlk-sw16==0.0.9
 pip3 install homeassistant
 echo "Deactivating virtualenv"
 deactivate
