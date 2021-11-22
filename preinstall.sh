@@ -8,10 +8,10 @@ echo "Running apt-get preparation"
 sudo apt update;
 sudo apt upgrade -y;
 sudo apt install wget screen git curl -y;
-sudo wget https://github.com/home-assistant/hassbian-scripts/releases/download/v0.13/hassbian-scripts_0.13.0_all.deb;
+sudo wget https://github.com/home-assistant/hassbian-scripts/releases/download/v0.13/hassbian-scripts_0.6.deb;
 sleep 5
 sudo apt install bluetooth avahi-daemon python3-venv libtiff5-dev libtiff5 libjbig-dev python3-pip python3-dev libbluetooth-dev build-essential libssl-dev libffi-dev  python-dev libudev-dev -y;
-sudo dpkg -i  hassbian-scripts_0.13.0_all.deb;
+sudo dpkg -i  hassbian-scripts_0.6.deb;
 sleep 5
 sudo hassbian-config show;
 sleep 3
