@@ -10,9 +10,8 @@ sudo apt-get update
 sudo apt-get install -y libavahi-compat-libdnssd-dev avahi-daemon libnss-mdns  
 
 echo "Getting node.js setup source"
-curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
-bash nodesource_setup.sh
-apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
+sudo apt-get install -y nodejs
 
 echo "Installing NODE-RED with npm"
 sudo npm install -g --unsafe-perm node-red
